@@ -10,12 +10,14 @@ const Home = lazy(() => import("./pages/Home"));
 const App = () => {
   return (
     <Suspense fallback={<div>Dom Loading...</div>}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<h1>Page not found</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<h1>Page not found</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </Suspense>
   );
 };
