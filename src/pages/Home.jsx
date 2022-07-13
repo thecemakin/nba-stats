@@ -1,8 +1,18 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, Stack, Skeleton, Card, CardContent, CardActions } from "@mui/material";
 import Topbar from "../components/Topbar";
 import logo from "../assets/images/clippers.png";
+import Axios from 'axios';
+import { useEffect } from "react";
 
 const Home = () => {
+
+    useEffect(() => {
+        Axios.get("/games", { params: { date: '2022-02-12' } })
+            .then((res) => {
+                console.log(res.data)
+            })
+    }, [])
+
     return (
         <div className="container mx-auto px-4 ">
             <Topbar />

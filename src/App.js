@@ -1,13 +1,19 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+import { initGamesMockAdapter } from "./mock";
 // pages
 const Home = lazy(() => import("./pages/Home"));
 
 const App = () => {
+
+  useEffect(() => {
+    initGamesMockAdapter();
+  }, [])
+
   return (
     <Suspense fallback={<div>Dom Loading...</div>}>
       <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
