@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { initGamesMockAdapter } from "./mock";
+import { initGamesMockAdapter, initStandsMockAdapter } from "./mock";
+import Standings from "./pages/Standings";
 // pages
 const Home = lazy(() => import("./pages/Home"));
 
@@ -12,6 +13,7 @@ const App = () => {
 
   useEffect(() => {
     initGamesMockAdapter();
+    initStandsMockAdapter();
   }, [])
 
   return (
@@ -21,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<h1>Page not found</h1>} />
+            <Route path="/standings" element={<Standings/>}/>
           </Routes>
         </BrowserRouter>
       </div>
