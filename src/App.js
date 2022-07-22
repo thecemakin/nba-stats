@@ -4,9 +4,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { initGamesMockAdapter, initStandsMockAdapter } from "./mock";
+import { initGamesMockAdapter, initPLayersMockAdapter, initStandsMockAdapter } from "./mock";
 import Standings from "./pages/Standings";
-// pages
+import Players from "./pages/Players";
+
 const Home = lazy(() => import("./pages/Home"));
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
   useEffect(() => {
     initGamesMockAdapter();
     initStandsMockAdapter();
+    initPLayersMockAdapter();
   }, [])
 
   return (
@@ -24,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<h1>Page not found</h1>} />
             <Route path="/standings" element={<Standings/>}/>
+            <Route path="/players" element={<Players/>} />
           </Routes>
         </BrowserRouter>
       </div>

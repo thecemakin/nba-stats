@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, MenuItem, Select, Stack, Skeleton, Card, CardContent, CardActions, TextField } from "@mui/material";
+import { Button, Stack, Card, CardContent, CardActions, TextField } from "@mui/material";
 import Topbar from "../components/Topbar";
 import logo from "../assets/images/clippers.png";
 import Axios from 'axios';
@@ -50,7 +50,8 @@ const Home = () => {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                /></Stack>
+                />
+            </Stack>
             <div className="card-wrapper grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-4 gap-4 ">
                 {card.length > 0 && card.map((card, index) => (
                     <Card key={index} variant="outlined">
