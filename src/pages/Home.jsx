@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, MenuItem, Select, Stack, Skeleton, Card, CardContent, CardActions, TextField } from "@mui/material";
+import { Button, Stack, Card, CardContent, CardActions, TextField } from "@mui/material";
 import Topbar from "../components/Topbar";
 import logo from "../assets/images/clippers.png";
 import Axios from 'axios';
@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { data } from "autoprefixer";
 import Time from 'react-time-format';
 import DetailDialog from "../components/dialogs/DetailDialog";
+import Breadcrumbs from "../components/BreadcrumbsMui.jsx";
 
 const Home = () => {
     const [clicked, setClicked] = useState(false);
@@ -34,7 +35,7 @@ const Home = () => {
     return (
         <div className="container mx-auto px-4 pb-10">
             <Topbar />
-
+            {/* <Breadcrumbs></Breadcrumbs> */}
             <h1 className="text-3xl font-bold my-5">
                 GAMES
             </h1>
@@ -50,7 +51,8 @@ const Home = () => {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                /></Stack>
+                />
+            </Stack>
             <div className="card-wrapper grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-4 gap-4 ">
                 {card.length > 0 && card.map((card, index) => (
                     <Card key={index} variant="outlined">

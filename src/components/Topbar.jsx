@@ -1,33 +1,56 @@
 import logo from "../../src/assets/images/logo.png";
-import { Button, ButtonGroup, MenuItem, Select, FormControl, InputLabel, OutlinedInput } from "@mui/material";
+import { Button, ButtonGroup, MenuItem, IconButton, Menu } from "@mui/material";
 import { Link } from "react-router-dom";
+import Fade from '@mui/material/Fade';
+import { useState } from "react";
 
 export default function Topbar() {
-    return (
-        <div>
-            <Link to="/">
-                <img className="w-25 h-20" src={logo} alt="pic" />
-            </Link>
-            <div className="buttons text-center">
-                <ButtonGroup variant="text" aria-label="text button group" color="inherit">
-                    <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/">Home</Link></Button>
-                    <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/standings">Standings</Link></Button>
-                    <Button>
-                        <FormControl sx={{ m: 1, width: 100, mt: 1 }}>
-                            <InputLabel variant="filled" id="demo-simple-select-readonly-label">Stats</InputLabel>
-                            <Select
-                                variant="filled"
-                            >
-                                <MenuItem>Players</MenuItem>
-                                <MenuItem>Leagues</MenuItem>
-                                <MenuItem>Seasons</MenuItem>
-                                <MenuItem>Teams</MenuItem>
-                                <MenuItem>Statics</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Button>
-                </ButtonGroup>
+    
+        const [anchorEl, setAnchorEl] = useState(null);
+        const open = Boolean(anchorEl);
+        const handleClick = (event) => {
+            setAnchorEl(event.currentTarget);
+        };
+        const handleClose = () => {
+            setAnchorEl(null);
+        };
+        return (
+            <div>
+                <Link to="/">
+                    <img className="w-25 h-20" src={logo} alt="pic" />
+                </Link>
+                <div className="buttons text-center">
+                    <ButtonGroup variant="text" aria-label="text button group" color="inherit">
+                        <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/">Home</Link></Button>
+                        <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/standings">Standings</Link></Button>
+                        <Button
+                            id="fade-button"
+                            aria-controls={open ? 'fade-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                        >
+                            Dashboard
+                        </Button>
+                        <Menu
+                            id="fade-menu"
+                            MenuListProps={{
+                                'aria-labelledby': 'fade-button',
+                            }}
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            TransitionComponent={Fade}
+                        >
+                            <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/players">Players</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/teams">Teams</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/leagues">Leagues</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/seasons">Seasons</Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/stats">Stats</Link></MenuItem>
+                        </Menu>
+
+                    </ButtonGroup>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }

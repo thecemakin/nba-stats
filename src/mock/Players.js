@@ -1,5 +1,5 @@
 // params: { team : '1', season: '2021' }
-const PlayersMockData = {
+export const PlayersMockData = {
     "get": "players/",
     "parameters": {
         "team": "1",
