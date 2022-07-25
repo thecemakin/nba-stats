@@ -1,5 +1,5 @@
 # NBA Stats App
-##### Maintainers: Cemo, Anil, Ozan
+##### Maintainers: Cem AKIN, Anil SIMSEK, Ozan
 
 ## Urls
 
