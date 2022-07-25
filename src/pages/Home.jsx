@@ -18,9 +18,7 @@ const Home = () => {
             .then((res) => {
                 console.log(res.data)
                 setCard(res.data.response);
-
-
-            })
+            }).catch(err => console.log(err));
     }, [])
     const openDialog = (data) => {
         // fetch clicked item data
@@ -54,7 +52,7 @@ const Home = () => {
                 />
             </Stack>
             <div className="card-wrapper grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-4 gap-4 ">
-                {card.length > 0 && card.map((card, index) => (
+                {card.length && card.length > 0 && card.map((card, index) => (
                     <Card key={index} variant="outlined">
                         <CardContent className="grid grid-cols-3">
                             <div className="team bg-white-600 text-center !items-center ">

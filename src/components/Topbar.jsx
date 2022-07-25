@@ -22,8 +22,8 @@ export default function Topbar() {
             </Link>
             <div className="buttons text-center">
                 <ButtonGroup variant="text" aria-label="text button group" color="inherit">
-                    <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/">Home</Link></Button>
-                    <Button><Link style={{ textDecoration: "none", color: "inherit" }} to="/standings">Standings</Link></Button>
+                    <Button><Link className="button-style" to="/">Home</Link></Button>
+                    <Button><Link className="button-style" to="/standings">Standings</Link></Button>
                     <Button
                         id="fade-button"
                         aria-controls={open ? 'fade-menu' : undefined}
@@ -43,11 +43,11 @@ export default function Topbar() {
                         onClose={handleClose}
                         TransitionComponent={Fade}
                     >
-                        <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/players">Players</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/teams">Teams</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/leagues">Leagues</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/seasons">Seasons</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link style={{ textDecoration: "none", color: "inherit" }} to="/stats">Stats</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link className="button-style" to="/players">Players</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link className="button-style" to="/teams">Teams</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link className="button-style" to="/leagues">Leagues</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link className="button-style" to="/seasons">Seasons</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link className="button-style" to="/stats">Stats</Link></MenuItem>
                     </Menu>
 
                 </ButtonGroup>

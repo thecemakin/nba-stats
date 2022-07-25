@@ -4,9 +4,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { initGamesMockAdapter, initPLayersMockAdapter, initStandsMockAdapter } from "./mock";
+import { initGamesMockAdapter, initLeaguesMockAdapter, initPLayersMockAdapter, initStandsMockAdapter } from "./mock";
 import Standings from "./pages/Standings";
 import Players from "./pages/Players";
+import Leagues from "./pages/Leagues";
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
     initGamesMockAdapter();
     initStandsMockAdapter();
     initPLayersMockAdapter();
+    initLeaguesMockAdapter();
   }, [])
 
   return (
@@ -32,6 +34,7 @@ const App = () => {
             <Route path="*" element={<h1>Page not found</h1>} />
             <Route path="/standings" element={<Standings/>}/>
             <Route path="/players" element={<Players/>} />
+            <Route path="/leagues" element={<Leagues/>} />
           </Routes>
         </BrowserRouter>
       </div>

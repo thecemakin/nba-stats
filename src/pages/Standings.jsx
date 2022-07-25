@@ -10,7 +10,7 @@ export default function Standings() {
             .then((res) => {
                 setStand(res.data.response);
                 console.log(res.data.response);
-            })
+            }).catch(err => console.log(err));
     }, [])
 
     return (

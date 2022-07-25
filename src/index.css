@@ -7,3 +7,7 @@
     width: 170px;
     object-fit: contain;
 }
+.button-style {
+    text-decoration: none;
+    color: inherit;
+}

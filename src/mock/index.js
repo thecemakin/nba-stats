@@ -3,6 +3,7 @@ import MockAdapter from 'axios-mock-adapter';
 import { gamesMockData } from './Games';
 import { StandigsMockData } from './Standings'
 import { PlayersMockData} from './Players'
+import { LeaguesMockData } from './Leagues';
 
 let mock = new MockAdapter(Axios);
 
@@ -17,4 +18,7 @@ export const initStandsMockAdapter = () => {
 
 export const initPLayersMockAdapter = () => {
     mock.onGet("/players").reply(200, PlayersMockData);
+}
+export const initLeaguesMockAdapter = () => {
+    mock.onGet("/leagues").reply(200, LeaguesMockData);
 }
