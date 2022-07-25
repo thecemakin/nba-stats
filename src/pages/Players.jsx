@@ -24,7 +24,7 @@ export default function Players() {
       
       <div className='player-container'>
         <div className="card-wrapper grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-4 gap-4 ">
-          {player.length && player.length > 0 && player.map((player, index) => (
+          {player && player.length > 0 && player.map((player, index) => (
 
             <Card  key={index} variant='outlined'>
               <CardContent className='grid grid-cols-2'>
