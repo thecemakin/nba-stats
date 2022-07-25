@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { data } from "autoprefixer";
 import Time from 'react-time-format';
 import DetailDialog from "../components/dialogs/DetailDialog";
+import Breadcrumbs from "../components/BreadcrumbsMui.jsx";
 
 const Home = () => {
     const [clicked, setClicked] = useState(false);
@@ -34,7 +35,7 @@ const Home = () => {
     return (
         <div className="container mx-auto px-4 pb-10">
             <Topbar />
-
+            {/* <Breadcrumbs></Breadcrumbs> */}
             <h1 className="text-3xl font-bold my-5">
                 GAMES
             </h1>

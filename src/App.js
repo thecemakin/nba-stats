@@ -8,6 +8,8 @@ import { initGamesMockAdapter, initPLayersMockAdapter, initStandsMockAdapter } f
 import Standings from "./pages/Standings";
 import Players from "./pages/Players";
 
+
+
 const Home = lazy(() => import("./pages/Home"));
 
 const App = () => {
@@ -19,8 +21,11 @@ const App = () => {
   }, [])
 
   return (
+    <>
+    
     <Suspense fallback={<div>Dom Loading...</div>}>
       <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -31,6 +36,7 @@ const App = () => {
         </BrowserRouter>
       </div>
     </Suspense>
+    </>
   );
 };
 
