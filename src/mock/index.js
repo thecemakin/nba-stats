@@ -19,6 +19,4 @@ export const initStandsMockAdapter = () => {
 export const initPLayersMockAdapter = () => {
     mock.onGet("/players").reply(200, PlayersMockData);
 }
-export const initLeaguesMockAdapter = () => {
-    mock.onGet("/leagues").reply(200, LeaguesMockData);
-}
+
