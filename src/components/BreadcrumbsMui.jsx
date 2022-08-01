@@ -16,17 +16,21 @@ const Breadcrumbs = () => {
     return (
         <MUIBreadcrumbs aria-label="breadcrumb">
             {pathnames.length ? (
-                <Link onClick={() => navigate("/")}>Home</Link>
+                <Link
+                    underline="hover"
+                    sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+                    color="inherit"
+                    href="/" onClick={() => navigate("/")}><HomeIcon sx={{ mr: 0.5, width: 25, height: 25 }} fontSize="inherit" /></Link>
             ) : (
-                <Typography> Home </Typography>
+                <Typography> <HomeIcon sx={{ mr: 0.5, width: 25, height: 25 }} fontSize="inherit" /></Typography>
             )}
             {pathnames.map((name, index) => {
                 const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathnames.length - 1;
                 return isLast ? (
-                    <Typography key={name}>{name}</Typography>
+                    <Typography sx={{ mr: 0.5 }} variant="" key={name}>{name.toLocaleUpperCase()}</Typography>
                 ) : (
-                    <Link key={name} onClick={() => navigate(routeTo)}>
+                    <Link sx={{ mr: 0.5 }} variant="" key={name} onClick={() => navigate(routeTo)}>
                         {name}
                     </Link>
                 );

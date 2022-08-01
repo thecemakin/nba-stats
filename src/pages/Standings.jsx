@@ -15,7 +15,7 @@ export default function Standings() {
 
     return (
         <div className='standings-container mx-auto px-4 pb-10'>
-            <Topbar />
+            {/* <Topbar /> */}
             <h1 className="text-3xl font-bold my-5">
                 STANDINGS
             </h1>

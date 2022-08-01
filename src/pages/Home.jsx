@@ -32,7 +32,7 @@ const Home = () => {
 
     return (
         <div className="container mx-auto px-4 pb-10">
-            <Topbar />
+            {/* <Topbar /> */}
             {/* <Breadcrumbs></Breadcrumbs> */}
             <h1 className="text-3xl font-bold my-5">
                 GAMES

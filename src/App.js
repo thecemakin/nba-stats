@@ -8,11 +8,8 @@ import { initGamesMockAdapter, initPLayersMockAdapter, initStandsMockAdapter } f
 import Standings from "./pages/Standings";
 import Players from "./pages/Players";
 import BreadcrumbsMui from "./components/BreadcrumbsMui";
-
-
-
-
-const Home = lazy(() => import("./pages/Home"));
+import Layout from "./components/Layout";
+import Topbar from "./components/Topbar";
 
 const App = () => {
 
@@ -26,17 +23,11 @@ const App = () => {
     <>
 
       <Suspense fallback={<div>Dom Loading...</div>}>
-        <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto px-4 pb-10">
           <BrowserRouter>
-            <div className="">
-              <BreadcrumbsMui />
-            </div>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<h1>Page not found</h1>} />
-              <Route path="/standings" element={<Standings />} />
-              <Route path="/players" element={<Players />} />
-            </Routes>
+          <Topbar/>
+          <BreadcrumbsMui />
+          <Layout/>
           </BrowserRouter>
         </div>
       </Suspense>
