@@ -15,7 +15,7 @@ export default function Standings() {
 
     return (
         <div className='standings-container mx-auto px-4 pb-10'>
-            <Topbar />
+            {/* <Topbar /> */}
             <h1 className="text-3xl font-bold my-5">
                 STANDINGS
             </h1>
@@ -33,7 +33,7 @@ export default function Standings() {
                                 <TableCell align='center'><span className='font-bold lg:text-base'>Season</span></TableCell>
                             </TableRow>
                         </TableHead>
-                        <TableBody>{stand > 0 && stand.map((stand, index) => (
+                        <TableBody>{stand && stand.length > 0 && stand.map((stand, index) => (
                             <TableRow key={index}>
                                 <TableCell align='center'>
                                     <div className='team bg-white-600 !text-center flex !items-center flex-col'>

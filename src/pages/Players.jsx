@@ -16,7 +16,7 @@ export default function Players() {
   }, [])
   return (
     <div className="container mx-auto px-4 pb-10">
-      <Topbar />
+      {/* <Topbar /> */}
 
       <h1 className="text-3xl font-bold my-5">
         PLAYERS
